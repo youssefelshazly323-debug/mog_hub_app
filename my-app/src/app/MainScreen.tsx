@@ -10,6 +10,7 @@ import {
   TextInput,
   View,
 } from 'react-native';
+import { MogPageHeader } from '@/components/mog-page-header';
 import styles from './Style';
 
 
@@ -57,6 +58,7 @@ export default function MainScreen() {
     <View>
       <SafeAreaView>
         <ScrollView>
+          <MogPageHeader title="Mog Hub" />
           <Image
             style={styles.mogHubLogo}
             source={require('../../assets/images/splash-icon.png')}

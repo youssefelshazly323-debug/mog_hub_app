@@ -29,7 +29,10 @@ export function MogPageHeader({ title }: { title: string }) {
               <Pressable
                 accessibilityRole="link"
                 accessibilityState={{ selected: active }}
-                style={[styles.navigationItem, active && styles.activeNavigationItem]}
+                style={StyleSheet.flatten([
+                  styles.navigationItem,
+                  active && styles.activeNavigationItem,
+                ])}
               >
                 <Text style={[styles.navigationText, active && styles.activeNavigationText]}>
                   {page.label}

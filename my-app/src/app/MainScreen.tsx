@@ -34,7 +34,7 @@ export default function MainScreen() {
   const renderPets = () =>
     pet.map((petEntry, index) => (
       <View key={`${petEntry.name}-${index}`} style={styles.inputPetContainer}>
-        <Text style={styles.inputPetTxt}>{`${petEntry.name} - ${petEntry.type}`}</Text>
+        <Text style={styles.inputPetTxt}>{`${petEntry.name}: ${petEntry.type}`}</Text>
       </View>
     ));
 
@@ -67,7 +67,7 @@ export default function MainScreen() {
           <Text style={styles.slogan}>P u r r f e c t C o m p a n i o n s</Text>
 
           <View style={styles.inputFlex}>
-            <Text style={styles.enterTxt}>Enter your pet's name:</Text>
+            <Text style={styles.enterTxt}>Enter your pet&apos;s name:</Text>
             <TextInput
               style={styles.UserInputTxt}
               placeholder="Mog"
@@ -116,7 +116,9 @@ export default function MainScreen() {
               </Pressable>
             ))}
             {!petName.trim() && (
-              <Text style={styles.modalValidation}>Enter your pet's name before adding it.</Text>
+              <Text style={styles.modalValidation}>
+                Enter your pet&apos;s name before adding it.
+              </Text>
             )}
             <View style={styles.modalActions}>
               <Button title="Cancel" onPress={() => setIsTypeModalVisible(false)} />
